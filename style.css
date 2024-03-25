@@ -1,7 +1,24 @@
-.resultados{
+.input{
+    border: solid 1px black;
+    border-radius: 1px;
     font-family: monospace;
-    border-radius: 3px;
-    border: solid 1px;
+}
+.selecionar{
+    border: solid 1px black;
+    border-radius: 1px;
+    font-family: monospace;
+}
+.botao{
+    border: solid 1px black;
+    border-radius: 1px;
+    font-family: monospace;
+}
+.resultados{
+    align-self: self-start;
+    font-family: monospace;
+    border-style: solid;
+    width: 400px;
+    height: 20px;
 }
 body{
     background-image: url(./images.jpeg);
@@ -11,15 +28,21 @@ body{
 }
 .box{
     width: 400px;
-    height: 260px;
-    font-family: monospace;
-    border: solid 2px;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    padding: 20px;
-    transform: translate(-50%, -50%);
-    background-color: lightgray;
+    height: 300px;
+    margin: auto;
+    background-color: rgb(147, 136, 136);
+    border: solid 2px black;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: self-start;
+    padding: 20px;
+    
+}
+
+h1{
+    font-family: monospace;
+    align-self: center;
 }
