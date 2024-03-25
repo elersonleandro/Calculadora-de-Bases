@@ -1,10 +1,13 @@
 .resultados{
     font-family: monospace;
+    border-radius: 3px;
+    border: solid 1px;
 }
 body{
     background-image: url(./images.jpeg);
     background-size: 100% auto;
-    background-repeat: no-repeat; 
+    background-repeat: no-repeat;
+    background-position: relative; 
 }
 .box{
     width: 400px;
