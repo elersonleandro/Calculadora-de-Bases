@@ -1,0 +1,23 @@
+.resultados{
+    font-family: monospace;
+}
+body{
+    background-image: url(./images.jpeg);
+    background-size: 100% auto;
+    background-repeat: no-repeat; 
+}
+.box{
+    width: 400px;
+    height: 260px;
+    font-family: monospace;
+    padding-top: 5px;
+    border: solid 2px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: lightgray;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="div_pai" class="box">
+        <center><h1>Elerson's Machine</h1></center>
+        <input type="text" placeholder="Digite o valor" class="resultados" id="input_valor">
+        <select id="selectBox" class="resultados">
+            <option value="Decimal">Decimal</option>
+            <option value="Binario">Binario</option>
+            <option value="Octal">Octal</option>
+            <option value="Hexadecimal">Hexadecimal</option>
+        </select>
+        <button id="converter" class="resultados">Converter</button><br><br>
+        <div id="div_decimal">Decimal: </div><br><br>
+        <div id="binario">Binario: </div><br><br>
+        <div id="div_octal">Octal: </div><br><br>
+        <div id="hexa">Hexadecimal: </div>
+    </div>
+</body>
+
+</html>
+<script>
+    function converter_dec() {
+        var decimal = Number(input_valor.value);
+
+        let octal = decimal.toString(8);
+
+        let hexadecimal = decimal.toString(16);
+
+        let binaria = decimal.toString(2);
+
+        div_decimal.innerHTML = `Decimal: ${decimal}`;
+        binario.innerHTML = `Binario: ${binaria}`;
+        div_octal.innerHTML = `Octal: ${octal}`;
+        hexa.innerHTML = `Hexadecimal: ${hexadecimal}`;
+    }
+    function converter_bin() {
+        var binaria = Number(input_valor.value);
+
+        let decima_num = parseInt(binaria, 2);
+
+        let decimal = decima_num.toString(10);
+
+        let hexadecimal = decima_num.toString(16);
+
+        let octal = decima_num.toString(8);
+
+        div_decimal.innerHTML = `Decimal: ${decimal}`;
+        binario.innerHTML = `Binario: ${binaria}`;
+        div_octal.innerHTML = `Octal: ${octal}`;
+        hexa.innerHTML = `Hexadecimal: ${hexadecimal}`;
+    }
+    function converter_octal() {
+        var octal = Number(input_valor.value);
+
+        let decima_num = parseInt(octal, 8);
+
+        let decimal = decima_num.toString(10);
+
+        let hexadecimal = decima_num.toString(16);
+
+        let binaria = decima_num.toString(2);
+
+        div_decimal.innerHTML = `Decimal: ${decimal}`;
+        binario.innerHTML = `Binario: ${binaria}`;
+        div_octal.innerHTML = `Octal: ${octal}`;
+        hexa.innerHTML = `Hexadecimal: ${hexadecimal}`;
+    }
+    function converter_hex() {
+        var hexadecimal = input_valor.value;
+
+        let decima_num = parseInt(hexadecimal, 16);
+
+        let decimal = decima_num.toString(10);
+
+        let octal = decima_num.toString(8);
+
+        let binaria = decima_num.toString(2);
+
+        div_decimal.innerHTML = `Decimal: ${decimal}`;
+        binario.innerHTML = `Binario: ${binaria}`;
+        div_octal.innerHTML = `Octal: ${octal}`;
+        hexa.innerHTML = `Hexadecimal: ${hexadecimal}`;
+    }
+    document.getElementById("converter").addEventListener("click", function () {
+        var selectedOption = document.getElementById("selectBox").value
+        switch (selectedOption) {
+            case "Decimal":
+                converter_dec();
+                break;
+            case "Binario":
+                converter_bin();
+                break;
+            case "Octal":
+                converter_octal();
+                break;
+            case "Hexadecimal":
+                converter_hex();
+                break;
+        }
+    });
+
+</script>
