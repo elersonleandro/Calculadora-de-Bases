@@ -18,7 +18,7 @@
             <option value="Octal">Octal</option>
             <option value="Hexadecimal">Hexadecimal</option>
         </select>
-        <button id="converter" class="botao">Converter</button>
+        <button onclick="converter()" class="botao">Converter</button>
         <div id="div_decimal" class="resultados">Decimal: </div>
         <div id="binario" class="resultados">Binario: </div>
         <div id="div_octal" class="resultados">Octal: </div>
@@ -29,83 +29,141 @@
 </html>
 <script>
     function converter_dec() {
-        var decimal = Number(input_valor.value);
+        var str = input_valor.value
+        console.log(str.data)
+        for (const char of str) {
+            console.log(char)
+            if (char == '0' || char == '1' || char == '2' || char == '3' || char == '4' || char == '5' || char == '6' || char == '7' || char == '8' || char == '9') {
+                var decimal = Number(input_valor.value);
 
-        let octal = decimal.toString(8);
+                let octal = decimal.toString(8);
 
-        let hexadecimal = decimal.toString(16);
+                let hexadecimal = decimal.toString(16);
 
-        let binaria = decimal.toString(2);
+                let binaria = decimal.toString(2);
 
-        div_decimal.innerHTML = `Decimal: ${decimal}`;
-        binario.innerHTML = `Binario: ${binaria}`;
-        div_octal.innerHTML = `Octal: ${octal}`;
-        hexa.innerHTML = `Hexadecimal: ${hexadecimal}`;
+                div_decimal.innerHTML = `Decimal: ${decimal}`;
+                binario.innerHTML = `Binário: ${binaria}`;
+                div_octal.innerHTML = `Octal: ${octal}`;
+                hexa.innerHTML = `Hexadecimal: ${hexadecimal}`;
+            }
+            else {
+                div_decimal.innerHTML = `Decimal: Erro`;
+                binario.innerHTML = `Binário: Erro`;
+                div_octal.innerHTML = `Octal: Erro`;
+                hexa.innerHTML = `Hexadecimal: Erro`;
+                alert("Por favor, insira um número válido para a base selecionada")
+                break;
+            }
+        }
     }
     function converter_bin() {
-        var binaria = Number(input_valor.value);
+        var str = input_valor.value
+        console.log(str.data)
+        for (const char of str) {
+            console.log(char)
+            if (char == '0' || char == '1') {
+                var binaria = Number(input_valor.value);
 
-        let decima_num = parseInt(binaria, 2);
+                decima_num = parseInt(binaria, 2);
 
-        let decimal = decima_num.toString(10);
+                let decimal = decima_num.toString(10);
 
-        let hexadecimal = decima_num.toString(16);
+                let hexadecimal = decima_num.toString(16);
 
-        let octal = decima_num.toString(8);
+                let octal = decima_num.toString(8);
 
-        div_decimal.innerHTML = `Decimal: ${decimal}`;
-        binario.innerHTML = `Binario: ${binaria}`;
-        div_octal.innerHTML = `Octal: ${octal}`;
-        hexa.innerHTML = `Hexadecimal: ${hexadecimal}`;
+                div_decimal.innerHTML = `Decimal: ${decimal}`;
+                binario.innerHTML = `Binário: ${binaria}`;
+                div_octal.innerHTML = `Octal: ${octal}`;
+                hexa.innerHTML = `Hexadecimal: ${hexadecimal}`;
+            }
+            else {
+                div_decimal.innerHTML = `Decimal: Erro`;
+                binario.innerHTML = `Binário: Erro`;
+                div_octal.innerHTML = `Octal: Erro`;
+                hexa.innerHTML = `Hexadecimal: Erro`;
+                alert("Por favor, insira um número válido para a base selecionada")
+                break;
+            }
+        }
     }
     function converter_octal() {
-        var octal = Number(input_valor.value);
+        var str = input_valor.value
+        console.log(str.data)
+        for (const char of str) {
+            console.log(char)
+            if (char == '0' || char == '2' || char == '3' || char == '4' || char == '5' || char == '6' || char == '7') {
+                var octal = Number(input_valor.value);
 
-        let decima_num = parseInt(octal, 8);
+                let decima_num = parseInt(octal, 8);
 
-        let decimal = decima_num.toString(10);
+                let decimal = decima_num.toString(10);
 
-        let hexadecimal = decima_num.toString(16);
+                let hexadecimal = decima_num.toString(16);
 
-        let binaria = decima_num.toString(2);
+                let binaria = decima_num.toString(2);
 
-        div_decimal.innerHTML = `Decimal: ${decimal}`;
-        binario.innerHTML = `Binario: ${binaria}`;
-        div_octal.innerHTML = `Octal: ${octal}`;
-        hexa.innerHTML = `Hexadecimal: ${hexadecimal}`;
+                div_decimal.innerHTML = `Decimal: ${decimal}`;
+                binario.innerHTML = `Binário: ${binaria}`;
+                div_octal.innerHTML = `Octal: ${octal}`;
+                hexa.innerHTML = `Hexadecimal: ${hexadecimal}`;
+            }
+            else {
+                div_decimal.innerHTML = `Decimal: Erro`;
+                binario.innerHTML = `Binário: Erro`;
+                div_octal.innerHTML = `Octal: Erro`;
+                hexa.innerHTML = `Hexadecimal: Erro`;
+                alert("Por favor, insira um número válido para a base selecionada")
+                break;
+            }
+        }
     }
     function converter_hex() {
-        var hexadecimal = input_valor.value;
+        var str = input_valor.value
+        console.log(str.data)
+        for (const char of str) {
+            console.log(char)
+            if (char == '0' || char == '2' || char == '3' || char == '4' || char == '5' || char == '6' || char == '7' || char == '7' || char == '8' || char == '9' || char == 'A' || char == 'B' || char == 'C' || char == 'D' || char == 'E' || char == 'F' || char == 'a' || char == 'b' || char == 'c' || char == 'd' || char == 'e' || char == 'f') {
+                var hexadecimal = input_valor.value;
 
-        let decima_num = parseInt(hexadecimal, 16);
+                let decima_num = parseInt(hexadecimal, 16);
 
-        let decimal = decima_num.toString(10);
+                let decimal = decima_num.toString(10);
 
-        let octal = decima_num.toString(8);
+                let octal = decima_num.toString(8);
 
-        let binaria = decima_num.toString(2);
+                let binaria = decima_num.toString(2);
 
-        div_decimal.innerHTML = `Decimal: ${decimal}`;
-        binario.innerHTML = `Binario: ${binaria}`;
-        div_octal.innerHTML = `Octal: ${octal}`;
-        hexa.innerHTML = `Hexadecimal: ${hexadecimal}`;
-    }
-    document.getElementById("converter").addEventListener("click", function () {
-        var selectedOption = document.getElementById("selectBox").value
-        switch (selectedOption) {
-            case "Decimal":
-                converter_dec();
+                div_decimal.innerHTML = `Decimal: ${decimal}`;
+                binario.innerHTML = `Binário: ${binaria}`;
+                div_octal.innerHTML = `Octal: ${octal}`;
+                hexa.innerHTML = `Hexadecimal: ${hexadecimal}`;
+            }
+            else {
+                div_decimal.innerHTML = `Decimal: Erro`;
+                binario.innerHTML = `Binário: Erro`;
+                div_octal.innerHTML = `Octal: Erro`;
+                hexa.innerHTML = `Hexadecimal: Erro`;
+                alert("Por favor, insira um número válido para a base selecionada")
                 break;
-            case "Binario":
-                converter_bin();
-                break;
-            case "Octal":
-                converter_octal();
-                break;
-            case "Hexadecimal":
-                converter_hex();
-                break;
+            }
         }
-    });
 
+    }
+    function converter() {
+        var opcao = selectBox.value
+        if (opcao == "Decimal") {
+            converter_dec()
+        }
+        else if (opcao == "Binario") {
+            converter_bin()
+        }
+        else if (opcao == "Octal") {
+            converter_octal()
+        }
+        else if (opcao == "Hexadecimal") {
+            converter_hex()
+        }
+    }
 </script>
