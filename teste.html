@@ -11,16 +11,18 @@
 <body>
     <div id="div_pai" class="box">
         <h1>Elerson's Machine</h1>
-        <input type="text" placeholder="Digite o valor" class="input" id="input_valor">
-        <select id="selectBox" class="selecionar">
-            <option value="Decimal">Decimal</option>
-            <option value="Binario">Binario</option>
-            <option value="Octal">Octal</option>
-            <option value="Hexadecimal">Hexadecimal</option>
-        </select>
-        <button onclick="converter()" class="botao">Converter</button>
+        <div class="usuario">
+            <input type="text" placeholder="Digite o valor" class="input" id="input_valor">
+            <select id="selectBox" class="selecionar">
+                <option value="Decimal">Decimal</option>
+                <option value="Binario">Binário</option>
+                <option value="Octal">Octal</option>
+                <option value="Hexadecimal">Hexadecimal</option>
+            </select>
+            <button onclick="converter()" class="botao">Converter</button>
+        </div>
         <div id="div_decimal" class="resultados">Decimal: </div>
-        <div id="binario" class="resultados">Binario: </div>
+        <div id="binario" class="resultados">Binário: </div>
         <div id="div_octal" class="resultados">Octal: </div>
         <div id="hexa" class="resultados">Hexadecimal: </div>
     </div>
@@ -38,7 +40,7 @@
 
                 let octal = decimal.toString(8);
 
-                let hexadecimal = decimal.toString(16);
+                let hexadecimal = decimal.toString(16).toUpperCase();
 
                 let binaria = decimal.toString(2);
 
@@ -52,7 +54,7 @@
                 binario.innerHTML = `Binário: Erro`;
                 div_octal.innerHTML = `Octal: Erro`;
                 hexa.innerHTML = `Hexadecimal: Erro`;
-                alert("Por favor, insira um número válido para a base selecionada")
+                alert("Por favor, insira um número válido para a base selecionada!")
                 break;
             }
         }
@@ -69,7 +71,7 @@
 
                 let decimal = decima_num.toString(10);
 
-                let hexadecimal = decima_num.toString(16);
+                let hexadecimal = decima_num.toString(16).toUpperCase();
 
                 let octal = decima_num.toString(8);
 
@@ -83,7 +85,7 @@
                 binario.innerHTML = `Binário: Erro`;
                 div_octal.innerHTML = `Octal: Erro`;
                 hexa.innerHTML = `Hexadecimal: Erro`;
-                alert("Por favor, insira um número válido para a base selecionada")
+                alert("Por favor, insira um número válido para a base selecionada!")
                 break;
             }
         }
@@ -100,7 +102,7 @@
 
                 let decimal = decima_num.toString(10);
 
-                let hexadecimal = decima_num.toString(16);
+                let hexadecimal = decima_num.toString(16).toUpperCase();
 
                 let binaria = decima_num.toString(2);
 
@@ -114,7 +116,7 @@
                 binario.innerHTML = `Binário: Erro`;
                 div_octal.innerHTML = `Octal: Erro`;
                 hexa.innerHTML = `Hexadecimal: Erro`;
-                alert("Por favor, insira um número válido para a base selecionada")
+                alert("Por favor, insira um número válido para a base selecionada!")
                 break;
             }
         }
@@ -125,7 +127,7 @@
         for (const char of str) {
             console.log(char)
             if (char == '0' || char == '2' || char == '3' || char == '4' || char == '5' || char == '6' || char == '7' || char == '7' || char == '8' || char == '9' || char == 'A' || char == 'B' || char == 'C' || char == 'D' || char == 'E' || char == 'F' || char == 'a' || char == 'b' || char == 'c' || char == 'd' || char == 'e' || char == 'f') {
-                var hexadecimal = input_valor.value;
+                var hexadecimal = input_valor.value.toUpperCase();
 
                 let decima_num = parseInt(hexadecimal, 16);
 
@@ -145,7 +147,7 @@
                 binario.innerHTML = `Binário: Erro`;
                 div_octal.innerHTML = `Octal: Erro`;
                 hexa.innerHTML = `Hexadecimal: Erro`;
-                alert("Por favor, insira um número válido para a base selecionada")
+                alert("Por favor, insira um número válido para a base selecionada!")
                 break;
             }
         }
